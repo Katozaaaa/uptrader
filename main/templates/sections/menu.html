@@ -1,0 +1,9 @@
+<div id="section-block-{{section_block_id}}" class="section-block">
+{% for section in sections %}
+{% if path_to_parent_section != '' %}
+<a id="section-link-{{section.slug}}" class="section-link" href="{% url 'sections' path_to_parent_section %}{{section.slug}}">{{section}}</a>
+{% else %}
+<a id="section-link-{{section.slug}}" class="section-link" href="{% url 'sections' section.slug %}">{{section}}</a>
+{% endif %}
+{% endfor %}
+</div>
